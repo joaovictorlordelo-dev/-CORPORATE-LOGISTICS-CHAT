@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import GuardaHorario from "./componentes/GuardaHorario";
 
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" translate="no">
       <body>
-        <GuardaHorario />
+        <Suspense fallback={null}>
+          <GuardaHorario />
+        </Suspense>
         {children}
       </body>
     </html>
